@@ -1,0 +1,37 @@
+[2019-04-11 11:29:05] [Msg] Table Type - Text file
+[2019-04-11 11:29:05] [Msg] Getting and Exporting data ...
+[2019-04-11 11:29:05] [Msg] Export query [liuyanhong]
+[2019-04-11 11:29:05] [Msg] Export to - C:\Users\Administrator\Desktop\liuyanhong.txt
+[2019-04-11 11:29:05] [Msg] 1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'CREATE table reader(
+typeld INT auto_increment PRIMARY key,
+typename VARCHAR(2' at line 7
+[2019-04-11 11:29:05] [Msg] SQL: CREATE TABLE users(
+userld int auto_increment PRIMARY key,
+username VARCHAR(50) not null,
+userpwd VARCHAR(20) not null,
+roleid INT not null DEFAULT 0
+)
+CREATE table reader(
+typeld INT auto_increment PRIMARY key,
+typename VARCHAR(20) not NULL,
+foregift int not null,
+otimecost INT ,
+borrsum INT NOT null,
+losepro INT
+
+)
+CREATE  table readers(
+rid int auto_increment PRIMARY KEY,
+ rName VARCHAR(20) not null,
+rpwd VARCHAR(2) NOT NULL,
+typeld INT NOT NULL,
+rGender VARCHAR(20) not null,
+rBirthday VARCHAR(20) not null,
+regDate VARCHAR(20) not null,
+idCard VARCHAR(20) not null UNIQUE,
+rphone VARCHAR(20),
+rEmail VARCHAR(20),
+CONSTRAINT typeld FOREIGN  key (typeld) REFERENCES reader(typeld)
+)
+
+[2019-04-11 11:29:05] [Msg] Finished - Unsuccessfully

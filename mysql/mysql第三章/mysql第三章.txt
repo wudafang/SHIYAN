@@ -1,0 +1,101 @@
+
+create table publish(
+pubid int auto_increment primary key,
+
+ pubname varchar(100) not null
+)
+insert into publish(pubname)
+values ('人民出版社'),
+('北京出版社'),
+('河北出版社')
+
+
+create table bookcate(
+tid int auto_increment primary key,
+tname varchar(10) 
+)
+
+insert bookcate(tname)
+values ('小说'),('文学'),('IT')
+
+--若修改一次，若改变被修改的内容则第一次修改的内容不变称为不可逆性
+update bookcate
+SET
+tname='幼儿'
+where tid=1
+
+
+
+create  table users(
+userid int auto_increment primary key ,
+username varchar(60) ,
+userpwd int ,
+roleid int default 0
+)
+insert users(username,userpwd)
+values ('admin',123123),('tom',456456),('jerry',789789)
+
+update users
+set 
+roleid=1
+where userid=1
+
+
+create table bookstore(
+bisbn  int auto_increment primary key,
+bname varchar(60) not null,
+author varchar(60) not  null,
+tid int ,
+pubid int  ,
+bprice int ,
+bsum int ,
+currcount int,
+bshelves varchar(60) ,
+bdesc varchar(60)
+
+)
+
+insert into bookstore
+values(null,'小时代','郭敬明',101,13,56,10,9,'一楼三排003列','适合16~35岁人群'),
+(null,'雾都孤儿','狄更斯',102,11,49,10,10,'二楼四排001列','适合12~45岁人群'),
+(null,'时间简史','霍金',103,12,59,10,10,'三楼四排005列','适合14~45岁人群'),
+(null,'java编程语言','java之父',104,13,49,15,15,'二楼四排004列','适合14~40岁人群'),
+(null,'呐喊','鲁迅',101,11,59,30,30,'一楼三排002列','适合16~50岁人群')
+
+
+
+
+
+
+
+create table reader(
+typeid int auto_increment primary key,
+typename varchar(20) not null,
+foregift int not null,
+otimecost int,
+borrsum int not null,
+losepro int 
+)
+
+CREATE TABLE newreader(
+rid int auto_increment primary key,
+rname varchar(20) not null,
+rpwd varchar(20) not null,
+typeid int ,
+rgender varchar(20) not null,
+rbirthday varchar(20) not null,
+regdate varchar(20) not null,
+idcard varchar(20)  unique not null,
+rphone varchar(20) ,
+remail varchar(20) ,
+FOREIGN KEY(typeid) REFERENCES reader(typeid)
+)
+
+(在添加时注意：从表引用外键时添加多少在主表里添加多少行）
+
+insert newreader(typeid,rname,rpwd,rgender,rbirthday,regdate,idcard,rphone,remail)
+values
+(1,'李欣','1234565','女','27-10月-1995','22-12月-2015','4130261957465464','13454354','1111@qq.com'),
+(2,'李宇','1234565','男','27-10月-1995','10-3月-2015','4130261957465436','13454354','8888@qq.com'),
+(3,'徐华然','1234565','男','27-10月-1995','10-2月-2015','4130261957465415','13454354','6666@qq.com'),
+(4,'李玉','1234565','男','27-10月-1995','22-12月-2015','4130261957465454','13454547','9999@qq.com')

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="java基础第十章"
+  id="myeclipse.1553179696967"
+  context-root="/java基础第十章"
+  j2ee-spec="5.0"
+  archive="java基础第十章.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

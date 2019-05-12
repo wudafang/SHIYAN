@@ -1,0 +1,29 @@
+CREATE TABLE reader(
+typeid INT auto_increment PRIMARY KEY,
+typeName VARCHAR(20) not NULL,
+foregift int NOT NULL,
+otimecost INT ,
+borrsum INT NOT NULL,
+losePro int 
+);
+
+CREATE TABLE teacherdb(
+userid INT auto_increment PRIMARY KEY,
+userName VARCHAR(50) NOT NULL,
+userpwd VARCHAR(20) NOT NULL,
+releid int not null DEFAULT'0'
+);
+
+CREATE TABLE reader(
+rid INT auto_increment PRIMARY key,
+rName VARCHAR(20) NOT NULL,
+rpwd VARCHAR(2) NOT NULL,
+typeid int NOT NULL,
+rGender VARCHAR(20) NOT NULL,
+rBirthday VARCHAR(20) not NULL,
+regDate VARCHAR(20) NOT NULL,
+idCard CHAR(18) NOT NULL UNIQUE,
+rPhone CHAR(11) ,
+rEmail VARCHAR(20),
+FOREIGN KEY(typeid) REFERENCES readertype(typeid)
+);

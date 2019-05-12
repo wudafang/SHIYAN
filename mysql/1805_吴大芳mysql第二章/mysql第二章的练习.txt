@@ -1,0 +1,36 @@
+
+CREATE TABLE student(
+greadid int,
+greadname varchar(60) not null
+
+);
+ALTER TABLE student ADD
+CONSTRAINT zj_dassid PRIMARY KEY(greadid);
+
+
+CREATE TABLE studentinfo(
+sid int auto_increment primary key ,
+sname varchar(60)  not null
+)
+
+
+CREATE TABLE gread(
+greadid int auto_increment primary key,
+greadname varchar (60) ,
+major varchar(50)
+)
+
+
+CREATE TABLE gread1(
+greadid int auto_increment primary key,
+greadname varchar (60) ,
+major varchar(50)
+)ENGINE=INNODB auto_increment=10001;
+
+
+CREATE TABLE student1(
+studentid int auto_increment primary key,
+studentname varchar(160) ,
+gender char(2) default 'ÄÐ'
+studentcard varchar(18) not  null unique 
+)

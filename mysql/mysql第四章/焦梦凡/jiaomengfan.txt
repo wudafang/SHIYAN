@@ -1,0 +1,47 @@
+﻿[2019-04-16 17:28:01] [Msg] Table Type - Text file
+[2019-04-16 17:28:01] [Msg] Getting and Exporting data ...
+[2019-04-16 17:28:01] [Msg] Export query [mysql4]
+[2019-04-16 17:28:01] [Msg] Export to - C:\Users\Administrator\Desktop\mysql4.txt
+[2019-04-16 17:28:01] [Msg] 1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insert book(bName,author,bNum,people,price) values
+('小时代','郭敬明',13,' at line 9
+[2019-04-16 17:28:01] [Msg] SQL: CREATE TABLE book(
+	bId INT auto_increment PRIMARY KEY,
+	bName VARCHAR(20) NOT NULL,
+	author VARCHAR(20) not null,
+	bNum int not null,
+	people varchar(20) not null,
+	price int not null
+)
+insert book(bName,author,bNum,people,price) values
+('小时代','郭敬明',13,'适合16~35岁人群',20),
+('雾都孤儿','狄更斯',11,'适合12~45岁人群',21),
+('时间简史','霍金',12,'适合14~45岁人群',20),
+('java编程语言','java之父',13,'适合14~40岁人群',30),
+('呐喊','鲁迅',11,'适合16~50岁人群',20),
+('丧钟为谁而鸣','海明威',11,'适合16~40岁人群',20),
+('失控','凯文凯利',12,'适合14~40岁人群',25),
+('java编程思想','BruceEckel',13,'适合14~40岁人群',23),
+('寒夜','巴金',11,'适合18~50岁人群',22),
+('红与黑','司汤达',11,'适合12~50岁人群',23),
+('长尾理论','克里斯安德森',12,'适合14~40岁人群',24),
+('java核心技术','CayHorstmann',13,'适合14~40岁人群',25),
+('女神','郭沫若',13,'适合16~55岁人群',30),
+('悲惨世界','雨果',12,'适合16~45岁人群',30),
+('未来是湿的','克莱舍基',12,'适合14~40岁人群',19),
+('精通struts','孙卫琴',13,'适合14~40岁人群',32),
+('骆驼祥子','老舍',11,'适合16~50岁人群',28),
+('战争与和平','托尔斯泰',11,'适合15~50岁人群',26);
+
+SELECT bId 序号,bName 图书名称,author 作者,bNum 出版社编号,people 适合人群 from book;
+-- 升序
+select * from book order by price asc; 
+-- 降序
+select * from book order by price desc;
+-- 小写转大写
+select  upper(bName),upper(author) from book;
+
+select * from book limit 10,5;
+select distinct bNum from book;
+
+
+[2019-04-16 17:28:01] [Msg] Finished - Unsuccessfully
